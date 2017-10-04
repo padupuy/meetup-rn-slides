@@ -1,0 +1,19 @@
+//DatePicker.android.js
+
+export default class DatePicker extends Component {
+  handleDatePicker = () => {
+    DatePickerAndroid.open(config).then(date => {
+          if (date.action !== DatePickerAndroid.dismissedAction) {
+              //...
+          }
+      })
+  }
+
+  render() {
+    return (
+      <TouchableOpacity onPress={this.handleDatePicker}>
+          <Input editable={false} returnKeyType='next' value={date}/>
+      </TouchableOpacity>
+    )
+  }
+}

@@ -1,0 +1,16 @@
+//DatePicker.ios.js
+
+export default class DatePicker extends Component {
+  render() {
+    return (
+        <View>
+            <TouchableOpacity onPress={this.handlePress}>
+                <Input editable={false} returnKeyType='next' value={date}/>
+            </TouchableOpacity>
+            <Animated.View style={{height: this.state.height}}>
+                <DatePickerIOS ref="input" mode="date" date={this.props.value} onDateChange={callback} style={{height: this.state.height}}/>
+            </Animated.View>
+        </View>
+    );
+  }
+}

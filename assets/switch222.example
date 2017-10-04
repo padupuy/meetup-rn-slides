@@ -1,0 +1,5 @@
+import DatePicker from './DatePicker';
+
+export default ({date, callback}) => {
+    return <DatePicker value={date} onChange={callback}/>
+}

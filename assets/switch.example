@@ -1,0 +1,14 @@
+import {
+  Platform
+} from 'react-native';
+
+function doSomething() {
+
+  if (Platform.OS === 'android') {
+    //
+  }
+  else {
+    //
+  }
+
+}

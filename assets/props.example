@@ -1,0 +1,15 @@
+/**
+* Définition
+*/
+const NomDeMonComposant = (props) => (
+  <div className="container">
+    <h1>
+      Bonjour {props.name} !
+    </h1>
+  </div>
+);
+
+/**
+* Utilisation
+*/
+<NomDeMonComposant name="P-A" />
