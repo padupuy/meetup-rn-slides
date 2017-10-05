@@ -15,6 +15,7 @@ import {
 } from 'spectacle';
 
 import CodeSlide from 'spectacle-code-slide';
+import ImageSlide from './ImageSlide';
 
 // Import image preloader util
 import preloader from 'spectacle/lib/utils/preloader';
@@ -128,28 +129,31 @@ export default class Presentation extends React.Component {
           <img src={images.logo} className="App-logo" alt="logo" />
           <List>
             <Appear>
-              <ListItem>Tour des concessionaires</ListItem>
+              <ListItem>Qualif</ListItem>
             </Appear>
             <Appear>
-              <ListItem>Présentation du modèle</ListItem>
+              <ListItem>Warm up</ListItem>
             </Appear>
             <Appear>
               <ListItem>Sous le capot</ListItem>
             </Appear>
             <Appear>
-              <ListItem>Tunning</ListItem>
+              <ListItem>Grille de départ</ListItem>
             </Appear>
             <Appear>
-              <ListItem>Contrôle technique</ListItem>
+              <ListItem>Prépa Moteur</ListItem>
             </Appear>
             <Appear>
-              <ListItem>Démo</ListItem>
+              <ListItem>Safety car</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>Pit stop</ListItem>
             </Appear>
           </List>
         </Slide>
 
         <Slide {...slideProps}>
-          <Heading {...headingProps}>Tour des concessionaires</Heading>
+          <Heading {...headingProps}>Qualif</Heading>
         </Slide>
         <Slide {...slideProps}>
           <img className="techno" src={images.cordova} />
@@ -224,7 +228,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide {...slideProps}>
-          <Heading {...headingProps}>Présentation du modèle</Heading>
+          <Heading {...headingProps}>Warm up</Heading>
         </Slide>
         <Slide {...slideProps}>
           <Text textColor="secondary">
@@ -299,22 +303,46 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide {...slideProps}>
           <Heading {...headingProps}>UX</Heading>
-          <Text textColor="secondary">Composant kewl / Ripple effect</Text>
-          <Text textColor="secondary">Lottie</Text>
-          <Text textColor="secondary">Quick Actions</Text>
+          <List>
+            <ListItem>ScrollView - rebound, pull to refresh</ListItem>
+            <ListItem>
+              Input - keyboardType, autoCorrect, returnKeyType, blurOnSubmit,
+              onSubmitEditing
+            </ListItem>
+            <ListItem>
+              Button - Highlight, Opacity, Ripple effect, hitSlop
+            </ListItem>
+          </List>
         </Slide>
         <Slide {...slideProps}>
           <Heading {...headingProps}>Options incluses de base</Heading>
           <List>
             <Appear>
-              <ListItem>Hot / Live reload : pas de compilation !</ListItem>
+              <ListItem>Hot / Live reload</ListItem>
             </Appear>
             <Appear>
               <ListItem>Temps de développement court</ListItem>
             </Appear>
             <Appear>
               <ListItem>
-                Communauté / conférence : http://bit.ly/2t8JHqm
+                <Text textColor="secondary">~85% de code en commun</Text>
+                <Link href="https://www.quora.com/How-much-will-you-be-able-to-share-code-between-Android-and-iOS-with-React-Native">
+                  How-much-will-you-be-able-to-share-code-between-Android-and-iOS
+                </Link>
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                <Text textColor="secondary">Communauté</Text>
+                <Link href="https://www.facebook.com/groups/react.native.community/">
+                  https://www.facebook.com/groups/react.native.community/
+                </Link>
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                <Text textColor="secondary">Conférence</Text>
+                <Link href="https://react-native.eu/">React-Native.eu</Link>
               </ListItem>
             </Appear>
           </List>
@@ -365,12 +393,17 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         <Slide {...slideProps}>
-          <Text textColor="secondary">Plugin JS</Text>
-          <Text textColor="secondary">Plugin Natif</Text>
+          <Heading {...headingProps}>Plugin : JS VS Natif</Heading>
+          <List>
+            <ListItem>Drawer transition</ListItem>
+            <ListItem>Stack transition</ListItem>
+            <ListItem>Lottie</ListItem>
+            <ListItem>Quick Actions</ListItem>
+          </List>
         </Slide>
 
         <Slide {...slideProps}>
-          <Heading {...headingProps}>Start</Heading>
+          <Heading {...headingProps}>Grille de départ</Heading>
         </Slide>
         <Slide {...slideProps}>
           <List>
@@ -383,7 +416,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide {...slideProps}>
-          <Heading {...headingProps}>Contrôle Technique</Heading>
+          <Heading {...headingProps}>Safety car</Heading>
         </Slide>
         <Slide {...slideProps}>
           <Text textColor="secondary">Debug with Chrome dev tools</Text>
@@ -393,7 +426,10 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide {...slideProps}>
           <Text textColor="secondary">RN Debugger</Text>
-          <img src={images.rnDebugger} height={800} />
+          <img src={images.rnDebugger} height={600} />
+        </Slide>
+        <Slide {...slideProps}>
+          <ImageSlide image={images.rnDebugger} />
         </Slide>
         <Slide {...slideProps}>
           <Text textColor="secondary">ComponentDidCatch</Text>
@@ -404,22 +440,36 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide {...slideProps}>
-          <Heading {...headingProps}>Tunning</Heading>
+          <Heading {...headingProps}>Prépa Moteur</Heading>
         </Slide>
         <Slide {...slideProps}>
-          <Text textColor="secondary">CSS Caching</Text>
-          <Text textColor="secondary">
-            Offloading animations =&gt; useNativeDriver: true
-          </Text>
-          <Text textColor="secondary">requestAnimationFrame</Text>
-          <Text textColor="secondary">
-            InteractionManager.runAfterInteractions()
-          </Text>
-          <Text textColor="secondary">scrollEventThrottle: 1</Text>
-        </Slide>
-
-        <Slide {...slideProps}>
-          <Heading {...headingProps}>Entretien</Heading>
+          <List>
+            <ListItem>
+              <Text textColor="secondary">CSS Caching</Text>
+              <Link href="http://facebook.github.io/react-native/releases/0.48/docs/stylesheet.html">
+                Making a stylesheet from a style object makes it possible to
+                refer to it by ID instead of creating a new style object every
+                time.
+              </Link>
+            </ListItem>
+            <ListItem>
+              Offloading animations =&gt; useNativeDriver: true
+            </ListItem>
+            <ListItem>requestAnimationFrame</ListItem>
+            <ListItem>InteractionManager.runAfterInteractions()</ListItem>
+            <ListItem>scrollEventThrottle: 1</ListItem>
+            <ListItem>
+              <Link href="http://bit.ly/2t8JHqm">
+                How to reduce a react native app size & startup time
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://speakerdeck.com/talkol/going-over-the-speed-limit-synchronous-rendering-in-react-native">
+                Going Over The Speed Limit - Synchronous Rendering in React
+                Native
+              </Link>
+            </ListItem>
+          </List>
         </Slide>
         <Slide {...slideProps}>
           <Heading {...headingProps}>Bridge</Heading>
@@ -452,6 +502,12 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide {...slideProps}>
+          <Heading {...headingProps}>Pit Stop</Heading>
+          <List>
+            <ListItem>Code Push</ListItem>
+          </List>
+        </Slide>
+        <Slide {...slideProps}>
           <Heading {...headingProps}>Bonus</Heading>
           <List>
             <ListItem>Utiliser un mac</ListItem>
@@ -462,9 +518,6 @@ export default class Presentation extends React.Component {
             <ListItem>Tester au fur et à mesure sur des vrais devices</ListItem>
             <ListItem>Tester les perf avec des versions packagées</ListItem>
           </List>
-        </Slide>
-        <Slide {...slideProps}>
-          <Heading {...headingProps}>Démo</Heading>
         </Slide>
         <Slide {...slideProps}>
           <Heading {...headingProps}>Merci</Heading>
