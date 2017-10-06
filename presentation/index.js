@@ -68,7 +68,8 @@ const images = {
   rnComponentsList: require('../assets/rn-components-list.png'),
   rnComponentsListResult: require('../assets/rn-components-list-result.png'),
   datepickerIos: require('../assets/datepicker-ios.jpg'),
-  datepickerAndroid: require('../assets/datepicker-android.png')
+  datepickerAndroid: require('../assets/datepicker-android.png'),
+  crashlytics: require('../assets/crashlytics.png')
 };
 
 preloader(images);
@@ -393,12 +394,12 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         <Slide {...slideProps}>
-          <Heading {...headingProps}>Plugin : JS VS Natif</Heading>
+          <Heading {...headingProps}>Plugin : JS & Natif</Heading>
           <List>
-            <ListItem>Drawer transition</ListItem>
-            <ListItem>Stack transition</ListItem>
+            <ListItem>Navigation</ListItem>
             <ListItem>Lottie</ListItem>
             <ListItem>Quick Actions</ListItem>
+            <ListItem>AR : Réalité augmentée</ListItem>
           </List>
         </Slide>
 
@@ -419,10 +420,12 @@ export default class Presentation extends React.Component {
           <Heading {...headingProps}>Safety car</Heading>
         </Slide>
         <Slide {...slideProps}>
-          <Text textColor="secondary">Debug with Chrome dev tools</Text>
-          <Text textColor="secondary">MessageQueue.spy(true) / RNSnoopy</Text>
-          <Text textColor="secondary">adb logcat</Text>
-          <Text textColor="secondary">RN bundle visualizer</Text>
+          <List>
+            <ListItem>Debug with Chrome dev tools</ListItem>
+            <ListItem>MessageQueue.spy(true) / RNSnoopy</ListItem>
+            <ListItem>adb logcat</ListItem>
+            <ListItem>RN bundle visualizer</ListItem>
+          </List>
         </Slide>
         <Slide {...slideProps}>
           <Text textColor="secondary">RN Debugger</Text>
@@ -432,8 +435,10 @@ export default class Presentation extends React.Component {
           <ImageSlide image={images.rnDebugger} />
         </Slide>
         <Slide {...slideProps}>
+          <Heading {...headingProps}>Error/Crash reporters</Heading>
           <Text textColor="secondary">ComponentDidCatch</Text>
           <Text textColor="secondary">Sentry / Crashlytics</Text>
+          <img src={images.crashlytics} height={600} />
         </Slide>
         <Slide {...slideProps}>
           <Text textColor="secondary">Detox</Text>
@@ -444,6 +449,15 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide {...slideProps}>
           <List>
+            <ListItem>
+              <Text textColor="secondary">console.log</Text>
+              <Link href="https://facebook.github.io/react-native/docs/performance.html#using-console-log-statements">
+                When running a bundled app, these statements can cause a big
+                bottleneck in the JavaScript thread. This includes calls from
+                debugging libraries such as redux-logger, so make sure to remove
+                them before bundling.
+              </Link>
+            </ListItem>
             <ListItem>
               <Text textColor="secondary">CSS Caching</Text>
               <Link href="http://facebook.github.io/react-native/releases/0.48/docs/stylesheet.html">
@@ -503,6 +517,9 @@ export default class Presentation extends React.Component {
 
         <Slide {...slideProps}>
           <Heading {...headingProps}>Pit Stop</Heading>
+          <Link href="https://www.youtube.com/watch?v=aHSUp7msCIE">
+            Ferrari F1 Pit Stop Perfection
+          </Link>
           <List>
             <ListItem>Code Push</ListItem>
           </List>
