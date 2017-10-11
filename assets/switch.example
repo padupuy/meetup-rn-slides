@@ -11,4 +11,11 @@ function doSomething() {
     //
   }
 
+  //ou mieux
+
+  const resultatEnFonctionDeLaPlateforme = Platform.select({ 
+    ios:{}, // Ici on peut mettre ce que l'on veut : Integer, Object, Function et bien sûr Component
+    android:{} 
+    })
+
 }
